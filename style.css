@@ -72,11 +72,22 @@ a {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
   font-size: 18px;
   letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
+}
+
+.brand__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
 }
 
 .nav__links {
@@ -234,6 +245,27 @@ a {
 
 .grid--3 {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--about {
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ---------- Photo ---------- */
+.photo {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(18, 24, 31, 0.1);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ---------- Cards ---------- */
@@ -431,8 +463,17 @@ a {
 
   .grid--2,
   .grid--3,
+  .grid--about,
   .form__row {
     grid-template-columns: 1fr;
+  }
+
+  .grid--about {
+    justify-items: start;
+  }
+
+  .photo {
+    max-width: 220px;
   }
 
   .nav__inner {
